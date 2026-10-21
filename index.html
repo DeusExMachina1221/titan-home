@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Titan Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- HOME -->
+  <section id="scr-home" class="screen active">
+    <div id="glowA" class="glow on"></div>
+    <div id="glowB" class="glow"></div>
+    <div class="h-top">
+      <div id="greeting" class="greeting"></div>
+      <div class="h-clockbox">
+        <div id="hClock" class="h-clock"></div>
+        <div id="hDate" class="h-date"></div>
+      </div>
+    </div>
+    <div class="shelf">
+      <div id="shelfTitle" class="shelf-title"></div>
+      <div id="shelfInfo" class="shelf-info"></div>
+    </div>
+    <div id="dock" class="dock"></div>
+  </section>
+
+  <!-- METEO -->
+  <section id="scr-weather" class="screen panel">
+    <h1 class="panel-title">Meteo</h1>
+    <div class="content w-wrap">
+      <div class="w-left">
+        <div id="wCity" class="w-city"></div>
+        <div class="w-main">
+          <span id="wIcon" class="w-icon"></span>
+          <span id="wTemp" class="w-temp"></span>
+        </div>
+        <div id="wCond" class="w-cond"></div>
+        <div class="w-details">
+          <div id="wFeels"></div>
+          <div id="wHum"></div>
+          <div id="wWind"></div>
+        </div>
+        <div id="wStatus" class="w-status"></div>
+        <button id="wRefresh" class="btn focusable" data-default="1">Aggiorna</button>
+      </div>
+      <div class="w-right">
+        <div id="wHours" class="w-hours"></div>
+        <div id="wDays" class="w-days"></div>
+      </div>
+    </div>
+    <div class="hint">&lsaquo; Indietro per tornare</div>
+  </section>
+
+  <!-- OROLOGIO -->
+  <section id="scr-clock" class="screen">
+    <div id="cBlock" class="c-block">
+      <div id="cTime" class="c-time"></div>
+      <div id="cDate" class="c-date"></div>
+      <div class="c-weather"><span id="cIcon" class="c-icon"></span><span id="cText"></span></div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section id="scr-calendar" class="screen panel">
+    <h1 class="panel-title">Calendario</h1>
+    <div class="content cal-wrap">
+      <div class="cal-bar">
+        <button id="calPrev" class="btn btn-sq focusable" aria-label="Mese precedente">&lsaquo;</button>
+        <div id="calTitle" class="cal-title"></div>
+        <button id="calNext" class="btn btn-sq focusable" data-default="1" aria-label="Mese successivo">&rsaquo;</button>
+        <button id="calToday" class="btn focusable">Oggi</button>
+      </div>
+      <div id="calHead" class="cal-grid cal-head"></div>
+      <div id="calGrid" class="cal-grid"></div>
+    </div>
+    <div class="hint">&lsaquo; Indietro per tornare</div>
+  </section>
+
+  <!-- TIMER -->
+  <section id="scr-timer" class="screen panel">
+    <h1 class="panel-title">Timer</h1>
+    <div class="content t-wrap">
+      <div id="tDisplay" class="t-display">05:00</div>
+      <div id="tPresets" class="t-row">
+        <button class="btn focusable" data-min="1">1 min</button>
+        <button class="btn focusable" data-min="3">3 min</button>
+        <button class="btn focusable" data-min="5">5 min</button>
+        <button class="btn focusable" data-min="10">10 min</button>
+        <button class="btn focusable" data-min="15">15 min</button>
+        <button class="btn focusable" data-min="30">30 min</button>
+      </div>
+      <div class="t-row">
+        <button id="tToggle" class="btn btn-big focusable" data-default="1">Avvia</button>
+        <button id="tReset" class="btn btn-big focusable">Reset</button>
+      </div>
+    </div>
+    <div class="hint">&lsaquo; Indietro per tornare</div>
+  </section>
+
+  <!-- IMPOSTAZIONI -->
+  <section id="scr-settings" class="screen panel">
+    <h1 class="panel-title">Impostazioni</h1>
+    <div class="content s-wrap">
+      <div class="s-col">
+        <div class="s-label">Città</div>
+        <div id="cityGrid" class="city-grid"></div>
+        <div class="s-label">Nome per il saluto</div>
+        <div class="s-row">
+          <input id="nameInput" class="field focusable" type="text" maxlength="30" placeholder="Il tuo nome" data-submit="nameBtn">
+          <button id="nameBtn" class="btn focusable">Salva</button>
+        </div>
+        <div id="nameStatus" class="s-status name"></div>
+      </div>
+      <div class="s-col">
+        <div class="s-label">Altra città</div>
+        <div class="s-row">
+          <input id="geoInput" class="field focusable" type="text" maxlength="60" placeholder="Cerca una città" data-submit="geoBtn">
+          <button id="geoBtn" class="btn focusable">Cerca</button>
+        </div>
+        <div id="geoResults" class="geo-results"></div>
+        <div id="setStatus" class="s-status"></div>
+      </div>
+    </div>
+    <div class="version">Titan Home v0.1</div>
+    <div class="hint">&lsaquo; Indietro per tornare</div>
+  </section>
+
+  <div id="banner" class="banner">Tempo scaduto</div>
+  <div id="debug" class="debug"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
